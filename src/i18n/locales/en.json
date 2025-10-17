@@ -36,6 +36,11 @@
     "search": "Search",
     "loading": "Loading...",
     "error": "An error occurred",
-    "success": "Success"
+    "success": "Success",
+    "arabicFormatting": "Arabic Formatting Examples",
+    "numbers": "Numbers",
+    "dates": "Dates",
+    "currency": "Currency",
+    "percentage": "Percentage"
   }
 }

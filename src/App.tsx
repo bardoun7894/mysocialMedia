@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRTL } from './hooks/useRTL';
 import LanguageSelector from './components/settings/LanguageSelector';
+import ArabicTextInput from './components/shared/ArabicTextInput';
+import ArabicFormatDemo from './components/shared/ArabicFormatDemo';
 
 function App() {
   const { t } = useTranslation();
   const { isRTL } = useRTL();
+  const [textInput, setTextInput] = useState('');
+  const [textareaInput, setTextareaInput] = useState('');
 
   return (
     <div className={`min-h-screen bg-gray-50 ${isRTL ? 'rtl' : 'ltr'}`}>
@@ -16,7 +20,7 @@ function App() {
         </div>
       </header>
       <main className="container mx-auto p-4">
-        <div className="bg-white rounded-lg shadow-md p-6">
+        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
           <h2 className="text-xl font-semibold mb-4">{t('dashboard.welcome')}</h2>
           <p className="text-gray-600 mb-4">
             {t('dashboard.subtitle')}
@@ -36,6 +40,30 @@ function App() {
             </div>
           </div>
         </div>
+
+        {/* Arabic Text Input Demo */}
+        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+          <h2 className="text-xl font-semibold mb-4">Arabic Text Input Demo</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <ArabicTextInput
+              label="Text Input"
+              value={textInput}
+              onChange={setTextInput}
+              placeholder={isRTL ? 'اكتب النص هنا' : 'Type text here'}
+            />
+            <ArabicTextInput
+              label="Text Area"
+              value={textareaInput}
+              onChange={setTextareaInput}
+              placeholder={isRTL ? 'اكتب النص الطويل هنا' : 'Type long text here'}
+              type="textarea"
+              rows={4}
+            />
+          </div>
+        </div>
+
+        {/* Arabic Formatting Demo */}
+        <ArabicFormatDemo />
       </main>
     </div>
   );

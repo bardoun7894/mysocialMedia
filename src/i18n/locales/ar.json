@@ -36,6 +36,11 @@
     "search": "بحث",
     "loading": "جاري التحميل...",
     "error": "حدث خطأ",
-    "success": "تم بنجاح"
+    "success": "تم بنجاح",
+    "arabicFormatting": "أمثلة التنسيق العربي",
+    "numbers": "الأرقام",
+    "dates": "التواريخ",
+    "currency": "العملة",
+    "percentage": "النسبة المئوية"
   }
 }
