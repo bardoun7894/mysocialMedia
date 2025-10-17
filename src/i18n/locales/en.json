@@ -41,6 +41,8 @@
     "numbers": "Numbers",
     "dates": "Dates",
     "currency": "Currency",
-    "percentage": "Percentage"
+    "percentage": "Percentage",
+    "profile": "Profile",
+    "logout": "Logout"
   }
 }
