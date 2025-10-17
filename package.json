@@ -45,7 +45,7 @@
     "@testing-library/react": "^16.1.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "4.2.1",
     "eslint": "^9.38.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
@@ -54,7 +54,7 @@
     "espree": "^10.4.0",
     "jsdom": "^25.0.1",
     "typescript": "^5.7.2",
-    "vite": "^7.1.10",
+    "vite": "5.4.10",
     "vitest": "^2.1.8"
   }
 }
