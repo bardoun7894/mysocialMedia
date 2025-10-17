@@ -1,0 +1,41 @@
+{
+  "app": {
+    "title": "Social Media Management System",
+    "description": "A system designed to help you manage marketing campaigns on social media platforms easily and effectively"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "campaigns": "Campaigns",
+    "reports": "Reports",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "welcome": "Welcome to Social Media Management System",
+    "subtitle": "This system is designed to help you manage marketing campaigns on social media platforms easily and effectively",
+    "features": {
+      "campaigns": {
+        "title": "Campaign Management",
+        "description": "Create and manage marketing campaigns with ease"
+      },
+      "analytics": {
+        "title": "Performance Analytics",
+        "description": "Track your campaign performance and analyze results"
+      },
+      "scheduling": {
+        "title": "Post Scheduling",
+        "description": "Schedule your posts to be published at the right time"
+      }
+    }
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "search": "Search",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success"
+  }
+}
