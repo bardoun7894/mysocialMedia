@@ -25,5 +25,23 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // Add RTL support plugin
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.text-right': { 'text-align': 'right' },
+        '.text-left': { 'text-align': 'left' },
+        '.float-right': { 'float': 'right' },
+        '.float-left': { 'float': 'left' },
+        '.border-r': { 'border-right-width': '1px' },
+        '.border-l': { 'border-left-width': '1px' },
+        '.mr-2': { 'margin-right': '0.5rem' },
+        '.ml-2': { 'margin-left': '0.5rem' },
+        '.pr-2': { 'padding-right': '0.5rem' },
+        '.pl-2': { 'padding-left': '0.5rem' },
+      };
+      
+      addUtilities(newUtilities);
+    }
+  ],
 }

@@ -1,12 +1,14 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useRTL } from './hooks/useRTL';
 import LanguageSelector from './components/settings/LanguageSelector';
 
 function App() {
   const { t } = useTranslation();
+  const { isRTL } = useRTL();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className={`min-h-screen bg-gray-50 ${isRTL ? 'rtl' : 'ltr'}`}>
       <header className="bg-primary-600 text-white p-4">
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold">{t('app.title')}</h1>

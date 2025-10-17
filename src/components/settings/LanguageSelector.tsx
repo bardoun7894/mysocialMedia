@@ -1,18 +1,17 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useRTL } from '../../hooks/useRTL';
 
 const LanguageSelector: React.FC = () => {
   const { i18n } = useTranslation();
+  const { isRTL } = useRTL();
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
-    // Update HTML dir attribute for RTL/LTR support
-    document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
-    document.documentElement.lang = lng;
   };
 
   return (
-    <div className="flex items-center space-x-2 space-x-reverse">
+    <div className={`flex items-center ${isRTL ? 'space-x-reverse' : 'space-x-2'}`}>
       <button
         onClick={() => changeLanguage('ar')}
         className={`px-3 py-1 rounded-md text-sm font-medium ${
