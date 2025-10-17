@@ -10,6 +10,13 @@
     "settings": "Settings"
   },
   "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Welcome to your social media management dashboard",
+    "newCampaign": "New Campaign",
+    "campaignProgress": "Campaign Progress",
+    "recentCampaigns": "Recent Campaigns",
+    "viewAllCampaigns": "View All Campaigns",
+    "postsByPlatform": "Posts by Platform",
     "welcome": "Welcome to Social Media Management System",
     "subtitle": "This system is designed to help you manage marketing campaigns on social media platforms easily and effectively",
     "features": {
@@ -25,6 +32,32 @@
         "title": "Post Scheduling",
         "description": "Schedule your posts to be published at the right time"
       }
+    },
+    "stats": {
+      "campaigns": "Total Campaigns",
+      "posts": "Total Posts",
+      "engagement": "Engagement Rate",
+      "reach": "Total Reach",
+      "thisMonth": "this month",
+      "thisWeek": "this week"
+    },
+    "campaigns": {
+      "summerSale": "Summer Sale Campaign",
+      "productLaunch": "Product Launch",
+      "brandAwareness": "Brand Awareness"
+    },
+    "status": {
+      "active": "Active",
+      "planning": "Planning",
+      "completed": "Completed"
+    },
+    "platforms": {
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "twitter": "Twitter"
+    },
+    "analytics": {
+      "postsOverTime": "Posts Over Time"
     }
   },
   "common": {

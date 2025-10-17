@@ -10,6 +10,13 @@
     "settings": "الإعدادات"
   },
   "dashboard": {
+    "title": "لوحة التحكم",
+    "subtitle": "مرحباً بك في لوحة تحكم إدارة وسائل التواصل الاجتماعي",
+    "newCampaign": "حملة جديدة",
+    "campaignProgress": "تقدم الحملة",
+    "recentCampaigns": "الحملات الأخيرة",
+    "viewAllCampaigns": "عرض جميع الحملات",
+    "postsByPlatform": "المنشورات حسب المنصة",
     "welcome": "مرحباً بك في نظام إدارة وسائل التواصل الاجتماعي",
     "subtitle": "هذا النظام مصمم لمساعدتك في إدارة حملات التسويق على منصات التواصل الاجتماعي بسهولة وفعالية",
     "features": {
@@ -25,6 +32,32 @@
         "title": "جدولة المنشورات",
         "description": "جدولة منشوراتك للنشر في الوقت المناسب"
       }
+    },
+    "stats": {
+      "campaigns": "إجمالي الحملات",
+      "posts": "إجمالي المنشورات",
+      "engagement": "معدل التفاعل",
+      "reach": "إجمالي الوصول",
+      "thisMonth": "هذا الشهر",
+      "thisWeek": "هذا الأسبوع"
+    },
+    "campaigns": {
+      "summerSale": "حملة بيع الصيف",
+      "productLaunch": "إطلاق المنتج",
+      "brandAwareness": "وعي العلامة التجارية"
+    },
+    "status": {
+      "active": "نشط",
+      "planning": "التخطيط",
+      "completed": "مكتمل"
+    },
+    "platforms": {
+      "facebook": "فيسبوك",
+      "instagram": "انستغرام",
+      "twitter": "تويتر"
+    },
+    "analytics": {
+      "postsOverTime": "المنشورات بمرور الوقت"
     }
   },
   "common": {

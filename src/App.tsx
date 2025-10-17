@@ -1,72 +1,63 @@
-import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useRTL } from './hooks/useRTL';
+import React from 'react';
+import { useAuth } from './contexts/AuthContext';
+import Dashboard from './components/pages/Dashboard';
 import LanguageSelector from './components/settings/LanguageSelector';
-import ArabicTextInput from './components/shared/ArabicTextInput';
-import ArabicFormatDemo from './components/shared/ArabicFormatDemo';
 
 function App() {
-  const { t } = useTranslation();
-  const { isRTL } = useRTL();
-  const [textInput, setTextInput] = useState('');
-  const [textareaInput, setTextareaInput] = useState('');
+  const { isAuthenticated, isLoading } = useAuth();
 
-  return (
-    <div className={`min-h-screen bg-gray-50 ${isRTL ? 'rtl' : 'ltr'}`}>
-      <header className="bg-primary-600 text-white p-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold">{t('app.title')}</h1>
-          <LanguageSelector />
-        </div>
-      </header>
-      <main className="container mx-auto p-4">
-        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-          <h2 className="text-xl font-semibold mb-4">{t('dashboard.welcome')}</h2>
-          <p className="text-gray-600 mb-4">
-            {t('dashboard.subtitle')}
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-primary-50 p-4 rounded-lg">
-              <h3 className="font-semibold text-primary-700 mb-2">{t('dashboard.features.campaigns.title')}</h3>
-              <p className="text-sm text-gray-600">{t('dashboard.features.campaigns.description')}</p>
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    // For now, we'll show a simple login form
+    // In a real implementation, this would be a proper login page
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="max-w-md w-full bg-white rounded-lg shadow-md p-6">
+          <h1 className="text-2xl font-bold text-center mb-6">Social Media Management</h1>
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input
+                type="email"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
+                placeholder="Enter your email"
+              />
             </div>
-            <div className="bg-primary-50 p-4 rounded-lg">
-              <h3 className="font-semibold text-primary-700 mb-2">{t('dashboard.features.analytics.title')}</h3>
-              <p className="text-sm text-gray-600">{t('dashboard.features.analytics.description')}</p>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+              <input
+                type="password"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"
+                placeholder="Enter your password"
+              />
             </div>
-            <div className="bg-primary-50 p-4 rounded-lg">
-              <h3 className="font-semibold text-primary-700 mb-2">{t('dashboard.features.scheduling.title')}</h3>
-              <p className="text-sm text-gray-600">{t('dashboard.features.scheduling.description')}</p>
-            </div>
+            <button
+              className="w-full bg-primary-600 text-white py-2 px-4 rounded-md hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
+              onClick={() => {
+                // Mock login for demonstration
+                localStorage.setItem('authToken', 'mock-token');
+                window.location.reload();
+              }}
+            >
+              Sign In
+            </button>
+          </div>
+          <div className="mt-6 flex justify-center">
+            <LanguageSelector />
           </div>
         </div>
+      </div>
+    );
+  }
 
-        {/* Arabic Text Input Demo */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-          <h2 className="text-xl font-semibold mb-4">Arabic Text Input Demo</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <ArabicTextInput
-              label="Text Input"
-              value={textInput}
-              onChange={setTextInput}
-              placeholder={isRTL ? 'اكتب النص هنا' : 'Type text here'}
-            />
-            <ArabicTextInput
-              label="Text Area"
-              value={textareaInput}
-              onChange={setTextareaInput}
-              placeholder={isRTL ? 'اكتب النص الطويل هنا' : 'Type long text here'}
-              type="textarea"
-              rows={4}
-            />
-          </div>
-        </div>
-
-        {/* Arabic Formatting Demo */}
-        <ArabicFormatDemo />
-      </main>
-    </div>
-  );
+  return <Dashboard />;
 }
 
 export default App;
